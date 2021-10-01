@@ -45,6 +45,7 @@ import {
 import { OrderByFieldsEnum } from "../types/listing-orderby-enum"
 import { IdNameDto } from "../../shared/dto/idName.dto"
 import { UserBasicDto } from "../../auth/dto/user-basic.dto"
+import { ListingPreferenceDto } from "../../preferences/dto/listing-preference.dto"
 
 export class ListingDto extends OmitType(Listing, [
   "applicationAddress",
@@ -58,6 +59,7 @@ export class ListingDto extends OmitType(Listing, [
   "jurisdiction",
   "leasingAgents",
   "leasingAgentAddress",
+  "listingPreferences",
   "preferences",
   "property",
   "reservedCommunityType",
@@ -124,6 +126,12 @@ export class ListingDto extends OmitType(Listing, [
   @ValidateNested({ groups: [ValidationsGroupsEnum.default], each: true })
   @Type(() => UserBasicDto)
   leasingAgents?: UserBasicDto[] | null
+
+  @Expose()
+  @IsDefined({ groups: [ValidationsGroupsEnum.default] })
+  @ValidateNested({ groups: [ValidationsGroupsEnum.default], each: true })
+  @Type(() => ListingPreferenceDto)
+  listingPreferences: ListingPreferenceDto[]
 
   @Expose()
   @IsDefined({ groups: [ValidationsGroupsEnum.default] })
