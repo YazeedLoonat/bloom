@@ -80,6 +80,7 @@ class Listing extends BaseEntity {
 
   @OneToMany(() => ListingPreference, (listingPreference) => listingPreference.listing, {
     cascade: true,
+    eager: true,
   })
   @Expose()
   @ValidateNested({ groups: [ValidationsGroupsEnum.default], each: true })

@@ -949,19 +949,19 @@ const coliseumListing: ListingSeedType = {
 
 export class ListingColiseumSeed extends ListingDefaultSeed {
   async seed() {
-    const priorityTypeMobilityAndHearingWithVisual = await this.unitAccessibilityPriorityTypeRepository.findOneOrFail(
-      {
-        name: "Mobility and Hearing & Visual",
-      }
-    )
-    const priorityTypeMobilityAndMobilityWithHearingAndVisual = await this.unitAccessibilityPriorityTypeRepository.findOneOrFail(
-      {
-        name: "Mobility and Mobility with Hearing & Visual",
-      }
-    )
+    // const priorityTypeMobilityAndHearingWithVisual = await this.unitAccessibilityPriorityTypeRepository.findOneOrFail(
+    //   {
+    //     name: "Mobility and Hearing & Visual",
+    //   }
+    // )
+    // const priorityTypeMobilityAndMobilityWithHearingAndVisual = await this.unitAccessibilityPriorityTypeRepository.findOneOrFail(
+    //   {
+    //     name: "Mobility and Mobility with Hearing & Visual",
+    //   }
+    // )
     const priorityTypeMobilityAndHearing = await this.unitAccessibilityPriorityTypeRepository.findOneOrFail(
       {
-        name: "Mobility and hearing",
+        name: "Mobility and Hearing",
       }
     )
     const priorityMobility = await this.unitAccessibilityPriorityTypeRepository.findOneOrFail({
@@ -989,13 +989,13 @@ export class ListingColiseumSeed extends ListingDefaultSeed {
       }
     )
 
-    // Assign priorityTypes
-    for (let i = 0; i < 3; i++) {
-      unitsToBeCreated[i].priorityType = priorityTypeMobilityAndMobilityWithHearingAndVisual
-    }
-    for (let i = 3; i < 14; i++) {
-      unitsToBeCreated[i].priorityType = priorityTypeMobilityAndHearingWithVisual
-    }
+    // // Assign priorityTypes
+    // for (let i = 0; i < 3; i++) {
+    //   unitsToBeCreated[i].priorityType = priorityTypeMobilityAndMobilityWithHearingAndVisual
+    // }
+    // for (let i = 3; i < 14; i++) {
+    //   unitsToBeCreated[i].priorityType = priorityTypeMobilityAndHearingWithVisual
+    // }
     for (let i = 14; i < 27; i++) {
       unitsToBeCreated[i].priorityType = priorityTypeMobilityAndHearing
     }

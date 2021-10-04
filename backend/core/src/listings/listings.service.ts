@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from "@nestjs/common"
+import { HttpException, HttpStatus, Injectable, NotFoundException } from "@nestjs/common"
 import jp from "jsonpath"
 import { Listing } from "./entities/listing.entity"
 import {
@@ -19,7 +19,6 @@ import { summarizeUnits } from "../shared/units-transformations"
 import { Language } from "../../types"
 import { TranslationsService } from "../translations/translations.service"
 import { AmiChart } from "../ami-charts/entities/ami-chart.entity"
-import { HttpException, HttpStatus } from "@nestjs/common"
 import { OrderByFieldsEnum } from "./types/listing-orderby-enum"
 
 @Injectable()
@@ -176,7 +175,6 @@ export class ListingsService {
         { excludeExtraneousValues: true }
       ),
     })
-
     return await this.listingRepository.save(listing)
   }
 
