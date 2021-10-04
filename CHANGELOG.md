@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file. The format 
   - Changes to applications done through `PUT /applications/:id` are now reflected in AFS ([#1810](https://github.com/bloom-housing/bloom/pull/1810))
   - Adds confirmationCode to applications table ([#1854](https://github.com/bloom-housing/bloom/pull/1854))
   - Add various backend filters ([#1884](https://github.com/bloom-housing/bloom/pull/1884))
+  - Listings with multiple AMI charts show a max value instead of a range ([#1925](https://github.com/bloom-housing/bloom/pull/1925)) (Emily Jablonski)
 
 ## Frontend
 
