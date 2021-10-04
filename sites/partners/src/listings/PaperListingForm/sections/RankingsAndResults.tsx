@@ -214,6 +214,7 @@ const RankingsAndResults = ({ listing }: RankingsAndResultsProps) => {
             <FieldGroup
               name="waitlistOpenQuestion"
               type="radio"
+              groupSubNote={t("listings.requiredToPublish")}
               register={register}
               error={fieldHasError(errors?.isWaitlistOpen) && waitlistOpen === null}
               errorMessage={fieldMessage(errors?.isWaitlistOpen)}
